@@ -1,6 +1,13 @@
 package com.seki.spring;
 
 public class User {
+
+    private String userName;
+
+//    public User(String userName) {
+//        this.userName = userName;
+//    }
+
     public void add(){
         System.out.println("Add something") ;
         System.out.println("Hello Spring") ;

@@ -1,4 +1,5 @@
-package com.seki.spring;
+package com.seki.spring.testdemo;
+import com.seki.spring.User;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

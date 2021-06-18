@@ -3,6 +3,27 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="com.seki.spring.User"></bean>
+    <bean id = "User" class="com.seki.spring.User"></bean>
 
+    <!--使用set方法注入-->
+    <bean id="book" class = "com.seki.spring.Book">
+        <property name="bName" value = "Love is art"></property>
+        <property name="bAuthor" value = "Seki"></property>
+        <!--对属性注入空值
+        <property name="bName">
+            <null></null>
+        </property>
+        -->
+        <!--注入的值包含特殊符号
+        <property name="bName">
+            <value><![CDATA[包含特殊符号]]></value>
+        </property>
+        -->
+    </bean>
+
+    <!--使用有参构造方法注入-->
+    <bean id = "order" class = "com.seki.spring.Order">
+        <constructor-arg name = "oName" value = "Order somthing"></constructor-arg>
+        <constructor-arg name = "oAddress" value = "China"></constructor-arg>
+    </bean>
 </beans>

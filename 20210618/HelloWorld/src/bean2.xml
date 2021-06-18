@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "dept" class = "com.seki.spring.bean.Dept"></bean>
+    <bean id = "emp" class = "com.seki.spring.bean.Emp">
+        <!--<property name="eDept" ref="dept"></property>-->
+        <property name="eDept">
+            <!--内部bean，嵌套-->
+            <bean id = "dept" class = "com.seki.spring.bean.Dept">
+                <property name="dName" value="Dell"></property>
+            </bean>
+        </property>
+        <property name="eGender" value="male"></property>
+        <property name="eName" value="Seki"></property>
+    </bean>
+</beans>
