@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--自动装配
+        通过标签属性autowire,常用属性：
+        byName:根据属性名称注入
+        byType:根据属性类型注入
+    -->
+    <bean id="emp" class="seki.spring.collection.autowire.Emp" autowire="byName">
+
+    </bean>
+    <bean id = "dept" class = "seki.spring.collection.autowire.Dept" >
+        <property name="dName" value="CS"></property>
+    </bean>
+</beans>

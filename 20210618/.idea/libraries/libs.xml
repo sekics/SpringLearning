@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/HelloWorld/libs/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/HelloWorld/libs/spring-expression-5.3.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/HelloWorld/libs/junit-4.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/HelloWorld/libs/spring-core-5.3.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/HelloWorld/libs/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/HelloWorld/libs/spring-context-5.3.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/HelloWorld/libs/spring-beans-5.3.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id = "student" class = "seki.spring.collection.Student">
+        <!--数组类型的注入-->
+        <property name="courses">
+            <array>
+                <value>Java</value>
+                <value>DataBase</value>
+            </array>
+        </property>
+        <!--list注入-->
+        <property name="list">
+            <list>
+                <value>Mike</value>
+                <value>Tom</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key = "math" value = "120"></entry>
+                <entry key = "English" value = "100"></entry>
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>mysql</value>
+                <value>redis</value>
+            </set>
+        </property>
+        <!--向List集合注入对象属性-->
+        <property name="courseList">
+            <list>
+                <ref bean="course1"></ref>
+                <ref bean="course2"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id = "course1" class = "seki.spring.collection.Course">
+        <property name="courseName" value="Java"></property>
+    </bean>
+    <bean id = "course2" class = "seki.spring.collection.Course">
+        <property name="courseName" value = "DataBase"></property>
+    </bean>
+</beans>
