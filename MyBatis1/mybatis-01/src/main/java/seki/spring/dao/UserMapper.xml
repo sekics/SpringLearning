@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace包名和接口对应-->
+<mapper namespace="seki.spring.dao.UserMapper">
+    <!--查询语句-->
+    <select id = "getUserList" resultType="seki.spring.pojo.User">
+        select * from mybatis.user
+    </select>
+
+    <!--在sql中使用通配符
+        select * from mybatis.user like %#{value}% ;
+        或者在value中加入通配符
+    -->
+    <select id= "getUserLikeList" resultType="seki.spring.pojo.User">
+        select * from mybatis.user like #{value} ;
+    </select>
+    <select id = "getUserById" parameterType="int" resultType="seki.spring.pojo.User">
+        select * from mybatis.user where id = #{id}
+    </select>
+
+    <insert id= "addUser" parameterType="seki.spring.pojo.User" >
+        insert into mybatis.user (id,name,pwd) values(#{id},#{name},#{pwd})
+    </insert>
+
+    <update id="updateUser" parameterType="seki.spring.pojo.User" >
+        update mybatis.user set name=#{name},pwd=#{pwd} where id = #{id}
+    </update>
+
+    <update id="updateUser2" parameterType="map">
+        update mybatis.user set pwd=#{userPwd} where id = #{userId}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from mybatis.user where id = #{id}
+    </delete>
+</mapper>
