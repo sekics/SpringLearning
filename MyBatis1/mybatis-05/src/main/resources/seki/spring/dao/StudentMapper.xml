@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="seki.spring.dao.StudentMapper">
+
+    <!--两种处理方式-->
+    <!--方法一，按照结果嵌套处理-->
+    <select id="getStudents2" resultMap="StudentTeachers">
+        select s.id sid,s.name sname,t.name tname
+        from student s,teacher t
+        where s.tid = t.id
+    </select>
+
+    <resultMap id="StudentTeacher2" type="seki.spring.pojo.Student">
+        <result property="id" column="sid"></result>
+        <result property="name" column="sname"></result>
+        <association property="teacher" javaType="seki.spring.pojo.Teacher">
+            <result property="name" column="tname"></result>
+        </association>
+    </resultMap>
+
+
+    <!--方法二-->
+    <resultMap id="StudentTeacher" type="seki.spring.pojo.Student">
+        <result property="id" column="id"></result>
+        <result property="name" column="name"></result>
+        <!--复杂的属性单独处理
+            对象：association
+            集合：collection
+        -->
+        <association property="teacher" column="tid" javaType="seki.spring.pojo.Teacher" select="getTeacherById"></association>
+    </resultMap>
+
+    <select id="getStudents" resultMap="StudentTeacher">
+        select * from mybatis.student
+    </select>
+
+    <!--此处查询老师的方法不需要在接口中声明-->
+    <select id="getTeacherById" resultType="seki.spring.pojo.Teacher">
+        select * from mybatis.teacher where id = #{id}
+    </select>
+
+</mapper>

@@ -3,19 +3,29 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!--ÒýÈëÍâ²¿ÅäÖÃÎÄ¼þ-->
+    <!--å¼•å…¥å¤–éƒ¨é…ç½®æ–‡ä»¶-->
     <properties resource="db.properties">
-        <!--ÕâÀïÃæÒ²¿ÉÒÔÅäÖÃÊôÐÔ,ÓÅÏÈÊ¹ÓÃÍâ²¿ÅäÖÃÎÄ¼þ-->
+        <!--è¿™é‡Œé¢ä¹Ÿå¯ä»¥é…ç½®å±žæ€§,ä¼˜å…ˆä½¿ç”¨å¤–éƒ¨é…ç½®æ–‡ä»¶-->
     </properties>
-    <!--ÅäÖÃ±ðÃû-->
-    <typeAliases>
+
+    <!--é…ç½®è®¾ç½®-->
+    <settings>
+        <!--æ ‡å‡†æ—¥å¿—å·¥åŽ‚å®žçŽ°-->
+        <!--<setting name="logImpl" value="STDOUT_LOGGING"/>-->
+        <!--LOG4J
+            1ã€å…ˆå¯¼å…¥LOG4JåŒ…
+        -->
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+    <!--é…ç½®åˆ«å-->
+ <!--   <typeAliases>
         <typeAlias type="seki.spring.pojo.User" alias="User"></typeAlias>
-    </typeAliases>
-    <!--ÅäÖÃdefaultÎª»·¾³idÃûÐÞ¸ÄËùÊ¹ÓÃµÄ»·¾³-->
+    </typeAliases>-->
+    <!--é…ç½®defaultä¸ºçŽ¯å¢ƒidåä¿®æ”¹æ‰€ä½¿ç”¨çš„çŽ¯å¢ƒ-->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
-            <!--±àÐ´ÅäÖÃÎÄ¼þdb.properties,È»ºóÒýÈë-->
+            <!--ç¼–å†™é…ç½®æ–‡ä»¶db.properties,ç„¶åŽå¼•å…¥-->
             <dataSource type="POOLED">
                 <property name="driver" value="${driver}"/>
                 <property name="url" value="${url}"/>
@@ -23,7 +33,7 @@
                 <property name="password" value="${password}"/>
             </dataSource>
         </environment>
-        <!--ÅäÖÃ²»Í¬µÄ»·¾³£¬id²»Í¬-->
+        <!--é…ç½®ä¸åŒçš„çŽ¯å¢ƒï¼Œidä¸åŒ-->
         <environment id="test">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
