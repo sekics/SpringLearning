@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--引入外部配置文件-->
+    <properties resource="db.properties">
+        <!--这里面也可以配置属性,优先使用外部配置文件-->
+    </properties>
+
+    <!--配置设置-->
+    <settings>
+        <!--标准日志工厂实现-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+
+        <!--显示开启全局缓存-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    <!--配置别名-->
+       <typeAliases>
+           <typeAlias type="com.portrait.pojo.Company" alias="Company"></typeAlias>
+           <typeAlias type="com.portrait.pojo.Res" alias="Res"></typeAlias>
+           <typeAlias type="com.portrait.pojo.Emp" alias="Emp"></typeAlias>
+       </typeAliases>
+    <!--配置default为环境id名修改所使用的环境-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <!--编写配置文件db.properties,然后引入-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+        <!--配置不同的环境，id不同-->
+    </environments>
+    <!--绑定接口-->
+    <!--使用注解不需要Mapper-->
+    <mappers>
+        <!--<mapper resource="seki/spring/dao/*Mapper.xml"/>-->
+        <mapper resource="com/portrait/dao/ResMapper.xml"></mapper>
+        <mapper resource="com/portrait/dao/EmpMapper.xml"></mapper>
+        <mapper resource="com/portrait/dao/CompanyMapper.xml"></mapper>
+    </mappers>
+</configuration>

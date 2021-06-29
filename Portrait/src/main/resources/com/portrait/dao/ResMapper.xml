@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.portrait.dao.ResMapper">
+
+    <insert id="insertRes" parameterType="Res">
+        insert into portrait.res (name,type,rank,score,time,weight,score,eid)
+        values (#{name},#{type},#{rank},#{score},#{time},#{weight},#{score},#{eid})
+    </insert>
+    <select id="getRestList" resultType="Res">
+        select * from portrait.res
+    </select>
+
+    <select id="getResByID" resultType="Res">
+        select * from portrait.res where eid = #{eid}
+    </select>
+</mapper>

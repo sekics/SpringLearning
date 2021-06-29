@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.portrait.dao.EmpMapper">
+
+    <select id="getEmpByID" resultType="Emp">
+        select * from portrait.emp where id = #{id}
+    </select>
+
+    <insert id="insertEmp" parameterType="Emp">
+        insert into portrait.emp (id,name,score,time,com) values(#{id},#{name},#{score},#{time},#{com})
+    </insert>
+
+    <insert id="updateEmp" parameterType="map">
+        update portrait.emp set score = #{empScore} where name = #{empName}
+    </insert>
+</mapper>

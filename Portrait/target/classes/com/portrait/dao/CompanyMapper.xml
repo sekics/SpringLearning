@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.portrait.dao.CompanyMapper">
+
+    <select id="getCompanyList" resultType="Company">
+        select * from portrait.company
+    </select>
+
+    <select id="getCompanyByName" resultType="Company">
+        select * from portrait.company where name = #{name}
+    </select>
+
+    <insert id="insertCompany" parameterType="Company">
+        insert into portrait.company (name,score,time) values(#{name},#{score},#{time})
+    </insert>
+
+    <update id="updateScore" parameterType="map">
+        update portrait.company set score = #{companyScore} where name = #{companyName}
+    </update>
+</mapper>

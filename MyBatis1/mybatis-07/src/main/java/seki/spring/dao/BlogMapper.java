@@ -10,4 +10,5 @@ public interface BlogMapper {
 
     int addBlog(Blog blog) ;
     List<Blog> queryBlogIF(Map<String,Object> map) ;
+    List<Blog> queryBlogChoose(Map<String,Object> map) ;
 }
