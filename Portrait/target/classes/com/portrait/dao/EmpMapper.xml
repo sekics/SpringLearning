@@ -12,6 +12,10 @@
         insert into portrait.emp (id,name,score,time,com) values(#{id},#{name},#{score},#{time},#{com})
     </insert>
 
+    <insert id="insertEmpMap" parameterType="map">
+        insert into portrait.emp (id,name,score,time,com) values(#{id},#{name},#{score},#{time},#{com})
+    </insert>
+
     <insert id="updateEmp" parameterType="map">
         update portrait.emp set score = #{empScore} where name = #{empName}
     </insert>

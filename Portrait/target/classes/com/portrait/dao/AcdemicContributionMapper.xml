@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.portrait.dao.AcdemicContributionMapper">
+
+    <insert id="addAcdemic" parameterType="map">
+        insert into portrait.acdemic (author_id,author_name,time,type,name,pub_type,total_person,identity_rank)
+        values(#{authorId},#{authorName},#{time},#{type},#{name},#{pubType},#{totalPerson},#{identityRank})
+    </insert>
+
+</mapper>

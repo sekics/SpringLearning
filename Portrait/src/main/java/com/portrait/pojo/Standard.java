@@ -2,31 +2,26 @@ package com.portrait.pojo;
 
 import java.util.Date;
 
-public class Res {
-
+public class Standard {
     private String authorId ;
     private String authorName ;
     private Date time ;
     private String name ;
-    private String awardLevel ;
-    private String awardRank ;
+    private String level ;
     private int totalPerson ;
-    private int identityRANK ;
-    private int weight ;
+    private int identityRank ;
 
-    public Res() {
+    public Standard() {
     }
 
-    public Res(String authorId, String authorName, Date time, String name, String awardLevel, String awardRank, int totalPerson, int identityRANK, int weight) {
+    public Standard(String authorId, String authorName, Date time, String name, String level, int totalPerson, int identityRank) {
         this.authorId = authorId;
         this.authorName = authorName;
         this.time = time;
         this.name = name;
-        this.awardLevel = awardLevel;
-        this.awardRank = awardRank;
+        this.level = level;
         this.totalPerson = totalPerson;
-        this.identityRANK = identityRANK;
-        this.weight = weight;
+        this.identityRank = identityRank;
     }
 
     public String getAuthorId() {
@@ -61,22 +56,6 @@ public class Res {
         this.name = name;
     }
 
-    public String getAwardLevel() {
-        return awardLevel;
-    }
-
-    public void setAwardLevel(String awardLevel) {
-        this.awardLevel = awardLevel;
-    }
-
-    public String getAwardRank() {
-        return awardRank;
-    }
-
-    public void setAwardRank(String awardRank) {
-        this.awardRank = awardRank;
-    }
-
     public int getTotalPerson() {
         return totalPerson;
     }
@@ -85,34 +64,32 @@ public class Res {
         this.totalPerson = totalPerson;
     }
 
-    public int getIdentityRANK() {
-        return identityRANK;
+    public int getIdentityRank() {
+        return identityRank;
     }
 
-    public void setIdentityRANK(int identityRANK) {
-        this.identityRANK = identityRANK;
+    public void setIdentityRank(int identityRank) {
+        this.identityRank = identityRank;
     }
 
-    public int getWeight() {
-        return weight;
+    public String getLevel() {
+        return level;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setLevel(String level) {
+        this.level = level;
     }
 
     @Override
     public String toString() {
-        return "Res{" +
+        return "Standard{" +
                 "authorId='" + authorId + '\'' +
                 ", authorName='" + authorName + '\'' +
                 ", time=" + time +
                 ", name='" + name + '\'' +
-                ", awardLevel='" + awardLevel + '\'' +
-                ", awardRank='" + awardRank + '\'' +
+                ", level='" + level + '\'' +
                 ", totalPerson=" + totalPerson +
-                ", identityRANK=" + identityRANK +
-                ", weight=" + weight +
+                ", identityRank=" + identityRank +
                 '}';
     }
 }

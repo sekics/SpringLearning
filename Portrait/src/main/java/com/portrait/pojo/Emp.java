@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Emp {
-    private int id ;
+    private String id ;
     private String name ;
     private int score ;
     private Date time ;
@@ -14,7 +14,7 @@ public class Emp {
     public Emp() {
     }
 
-    public Emp(int id, String name, int score, Date time, Company company, List<Res> resList) {
+    public Emp(String id, String name, int score, Date time, Company company, List<Res> resList) {
         this.id = id;
         this.name = name;
         this.score = score;
@@ -23,11 +23,11 @@ public class Emp {
         this.resList = resList;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

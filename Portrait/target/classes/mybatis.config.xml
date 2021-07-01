@@ -21,6 +21,7 @@
            <typeAlias type="com.portrait.pojo.Company" alias="Company"></typeAlias>
            <typeAlias type="com.portrait.pojo.Res" alias="Res"></typeAlias>
            <typeAlias type="com.portrait.pojo.Emp" alias="Emp"></typeAlias>
+           <typeAlias type="com.portrait.pojo.AcdemicContribution" alias="AcdemicContribution"></typeAlias>
        </typeAliases>
     <!--配置default为环境id名修改所使用的环境-->
     <environments default="development">
@@ -43,5 +44,7 @@
         <mapper resource="com/portrait/dao/ResMapper.xml"></mapper>
         <mapper resource="com/portrait/dao/EmpMapper.xml"></mapper>
         <mapper resource="com/portrait/dao/CompanyMapper.xml"></mapper>
+        <mapper resource="com/portrait/dao/AcdemicContributionMapper.xml"></mapper>
+        <mapper resource="com/portrait/dao/StandardMapper.xml"></mapper>
     </mappers>
 </configuration>

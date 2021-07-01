@@ -4,15 +4,19 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.portrait.dao.ResMapper">
 
-    <insert id="insertRes" parameterType="Res">
-        insert into portrait.res (name,type,rank,score,time,weight,score,eid)
-        values (#{name},#{type},#{rank},#{score},#{time},#{weight},#{score},#{eid})
+    <insert id="insertResMap" parameterType="map">
+        insert into portrait.res (author_id,author_name,time,name,award_level,award_rank,total_person,identity_rank,weight)
+        values(#{authorId},#{authorName},#{time},#{name},#{awardLevel},#{awardRank},#{totalPerson},#{identityRank},#{weight})
     </insert>
-    <select id="getRestList" resultType="Res">
-        select * from portrait.res
-    </select>
+<!--    <insert id="insertRes" parameterType="Res">-->
+<!--        insert into portrait.res (name,type,rank,score,time,weight,score,eid)-->
+<!--        values (#{name},#{type},#{rank},#{score},#{time},#{weight},#{score},#{eid})-->
+<!--    </insert>-->
+<!--    <select id="getRestList" resultType="Res">-->
+<!--        select * from portrait.res-->
+<!--    </select>-->
 
-    <select id="getResByID" resultType="Res">
-        select * from portrait.res where eid = #{eid}
-    </select>
+<!--    <select id="getResByID" resultType="Res">-->
+<!--        select * from portrait.res where eid = #{eid}-->
+<!--    </select>-->
 </mapper>
